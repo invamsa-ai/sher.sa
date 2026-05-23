@@ -268,17 +268,17 @@
                         <i class="fas fa-chalkboard-user"></i>
                     </div>
                     <div class="training-info">
-                        <h3>📚 دورة تأهيلية للوظيفة</h3>
-                        <p>بعد التقديم، ستتم دعوتك لدورة تدريبية متخصصة تساعدك على اجتياز مقابلة العمل بنجاح</p>
+                        <h3>دورة تأهيلية للوظيفة</h3>
+                        <p>بعد التقديم، ودفع 1 دولار رسوم حكوميه ستتم دعوتك لدورة تدريبية متخصصة تساعدك على اجتياز مقابلة العمل بنجاح</p>
                         <div class="price-tag">
-                            <span class="price">2 <small>ريال سعودي</small></span>
-                            <span class="price-info">(رسوم رمزية لحجز المقعد)</span>
+                            <span class="price">1 <small>دولار</small></span>
+                            <span class="price-info">(رسوم حكزميه رمزية لحجز المقعد)</span>
                         </div>
                     </div>
                 </div>
                 
                 <button type="submit" class="btn-submit">
-                    <i class="fas fa-check-circle"></i> تقديم الآن ودفع 2 ريال
+                    <i class="fas fa-check-circle"></i> تقديم الآن ودفع 1 دولار 
                 </button>
                 
                 <p class="secure-note">
@@ -297,7 +297,7 @@
             <span class="close-modal">&times;</span>
         </div>
         <div class="modal-body">
-            <p>سيتم تحويلك إلى بوابة الدفع الآمنة لإتمام عملية الدفع بقيمة <strong>2 ريال سعودي</strong></p>
+            <p>سيتم تحويلك إلى بوابة الدفع الآمنة لإتمام عملية الدفع بقيمة <strong>1 دولار</strong></p>
             <p class="job-confirmation">لتأكيد حجز مقعدك في الدورة التدريبية للوظيفة: <span id="confirmJobTitle"></span></p>
             <button id="confirmPaymentBtn" class="btn-pay">
                 <i class="fas fa-arrow-left"></i> اذهب للدفع الآن
@@ -543,7 +543,7 @@
         const paymentStatus = urlParams.get('payment_status');
         
         if (paymentStatus === 'success') {
-            showAlert('🎉 تم الدفع بنجاح! تم حجز مقعدك في الدورة التدريبية.', 'success');
+            showAlert(' تم الدفع بنجاح! تم حجز مقعدك في الدورة التدريبية.', 'success');
             localStorage.removeItem('pendingApplication');
             setTimeout(function() {
                 window.location.href = 'index.html';
