@@ -1680,25 +1680,26 @@ main, .main-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px;
+    padding: 25px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
-    background: transparent; /* إزالة الخلفية الزرقاء */
+    background: transparent;
 }
 
 
 
 .sidebar-logo-img {
-    width: 90px;
-    height: 90px;
-    border-radius: 20px;
-    object-fit: cover;
+    max-width: 130px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    object-fit: contain;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    /* إزالة أي filter قد يحول اللون */
     filter: none;
-    background: white; /* خلفية بيضاء حول الصورة */
-    padding: 5px;
+    background: white;
+    padding: 8px;
 }
 /* جعل الصورة بيضاء */
 /* إزالة أي تأثيرات من الكلاس white-logo إن وجد */
