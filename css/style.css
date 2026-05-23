@@ -1798,7 +1798,7 @@ main, .main-content {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(255, 255, 255, 0.12);  /* زجاجي شفاف */
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 215, 0, 0.4);
     border-radius: 80px;
@@ -1808,10 +1808,10 @@ main, .main-content {
 }
 
 .certification-content:hover {
-    background: rgba(0, 0, 0, 0.55);
+   background: rgba(255, 255, 255, 0.18);
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    border-color: rgba(255, 215, 0, 0.7);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 215, 0, 0.5);
 }
 
 /* الأيقونة */
@@ -1873,12 +1873,15 @@ main, .main-content {
         margin-top: 40px;
     }
     
+     
     .certification-content {
         padding: 10px 25px;
         gap: 18px;
+        backdrop-filter: blur(10px);
     }
     
-    .certification-logo img {
+    
+   .certification-logo img {
         width: 55px;
         height: 55px;
         padding: 6px;
@@ -1905,8 +1908,8 @@ main, .main-content {
         border-radius: 60px;
         flex-wrap: wrap;
         justify-content: center;
+        backdrop-filter: blur(8px);
     }
-    
     .certification-logo img {
         width: 50px;
         height: 50px;
@@ -1932,13 +1935,14 @@ main, .main-content {
         margin-top: 30px;
     }
     
-    .certification-content {
+      .certification-content {
         padding: 10px 18px;
         gap: 12px;
         border-radius: 50px;
         flex-direction: column;
         text-align: center;
         max-width: 90%;
+        backdrop-filter: blur(8px);
     }
     
     .certification-text {
@@ -1996,11 +2000,11 @@ main, .main-content {
         margin-top: 60px;
     }
     
-    .certification-content {
+   .certification-content {
         padding: 15px 35px;
         gap: 25px;
+        backdrop-filter: blur(15px);
     }
-    
     .certification-logo img {
         width: 75px;
         height: 75px;
