@@ -280,13 +280,49 @@
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     font-family: 'Tajawal', sans-serif;
+    white-space: nowrap;
+    height: 52px;
+    min-width: 100px;
 }
 
 .search-bar button:hover {
     background: #b88d2e;
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(201, 160, 61, 0.3);
+}
+
+.search-bar button:active {
+    transform: translateY(0);
+}
+
+/* استجابة للجوال */
+@media (max-width: 768px) {
+    .search-bar button {
+        padding: 0 20px;
+        font-size: 14px;
+        height: 46px;
+        min-width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar button {
+        padding: 0 16px;
+        font-size: 13px;
+        height: 42px;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 380px) {
+    .search-bar button {
+        padding: 0 12px;
+        font-size: 12px;
+        height: 40px;
+        min-width: 70px;
+    }
 }
 
 .filter-options {
