@@ -12,25 +12,68 @@
 
 <header class="header">
     <div class="container">
-        <div class="logo">
-            <img src="img/logo.jpg" alt="شعار السعودية" onerror="this.style.display='none'">
-            <h1>وظائف <span>السعودية</span></h1>
-            
+        <!-- لوجو الجوال (يظهر في الهاتف فقط) -->
+        <div class="logo logo-mobile">
+            <img src="img/logo.jpg" alt="شعار ابشر توظيف" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
         </div>
+        
+        <!-- الأثنين اللوجو (يظهران في الديسكتوب فقط) -->
+        <div class="logo-group logo-desktop">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="شعار ابشر توظيف" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+            </div>
+          
+        </div>
+        
         <nav class="nav">
-            <a href="index.html">الرئيسية</a>
-            <a href="jobs.html">الوظائف</a>
-                <a href="favorites.html">المفضلة</a>
-            <a href="#categories">الأقسام</a>
+            <a href="index.html" class="active">الرئيسية</a>
+            <a href="jobs.html" class="active">الوظائف</a>
+            <a href="favorites.html">المفضلة</a>
+                        <a href="terms.html" >عن أبشر أعمال</a>
         </nav>
-        <div class="auth-buttons">
-            <a href="jobs.html" class="btn-register">الوظائف</a>
+         <div class="logo-group logo-desktop">
+           
+            <div class="logo">
+                <img src="img/logo15.png" alt="شعار روية 2300" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+            </div>
         </div>
+        
         <button class="mobile-menu-btn">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 </header>
+
+<!-- القائمة الجانبية (سايد بار) للجوال - توضع خارج الهيدر -->
+<div class="sidebar-overlay">
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        
+        <!-- صورة ابشر توظيف في الجهة اليسرى - بلون أبيض -->
+        <div class="sidebar-logo-top">
+            <img src="img/logo.jpg" alt="ابشر توظيف" class="white-logo" onerror="this.src='https://placehold.co/80x80/ffffff/376882?text=ابشر'">
+            <h3 class="logo-title">ابشر توظيف</h3>
+        </div>
+        
+        <div class="sidebar-nav">
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="jobs.html"><i class="fas fa-briefcase" class="active"></i> الوظائف</a>
+            <a href="favorites.html"><i class="fas fa-heart"></i> المفضلة</a>
+                              <a href="terms.html" >عن أبشر أعمال</a>
+
+        </div>
+        
+        <div class="sidebar-auth">
+            <a href="jobs.html" class="btn-register-sidebar"><i class="fas fa-briefcase"></i> تقديم على وظيفة</a>
+        </div>
+        
+        <!-- صورة رؤية 2030 في الأسفل -->
+        <div class="sidebar-logo-bottom">
+            <img src="img/logo15.png" alt="رؤية المملكة 2030" onerror="this.src='https://placehold.co/80x80/165B33/white?text=رؤية+2030'">
+            <p>رؤية المملكة 2030</p>
+        </div>
+    </div>
+</div>
 
 <!-- تفاصيل الوظيفة -->
 <section class="job-details-section">
@@ -66,7 +109,55 @@
         </div>
     </div>
 </div>
-
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-main-content">
+            <!-- الجهة اليمنى - صورة مثل اللوجو -->
+            <div class="footer-right">
+                <img src="img/logo.jpg" alt="شعار أبشر" class="footer-logo" onerror="this.src='https://placehold.co/150x80/376882/white?text=🇸🇦'">
+            </div>
+            
+            <!-- المنتصف - حقوق الملكية والنص القانوني -->
+            <div class="footer-center">
+                <p class="copyright-text">
+                    جميع الحقوق محفوظة لأبشر، المملكة العربية السعودية © 1447هـ - 2026م.<br>
+                    والوصلات الخارجية الموجودة في البوابة هي لأغراض مرجعية، أبشر ليس مسؤولا عن محتويات المواقع الخارجية.
+                </p>
+            </div>
+            
+            <!-- الجهة اليسرى - قائمة التنقل -->
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="jobs.html" class="active">الوظائف</a>
+                    <a href="favorites.html">المفضلة</a>
+                        <a href="terms.html" >عن أبشر أعمال</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الشريط الأبيض السفلي -->
+    <div class="footer-bottom-bar">
+        <div class="container">
+            <div class="bottom-bar-content">
+                <!-- الجهة اليسار - صورة صغيرة + نص -->
+                <div class="bottom-bar-left">
+                    <img src="img/sdaia-logo.png" alt="مركز المعلومات الوطني" class="small-logo" onerror="this.src='https://placehold.co/30x30/376882/white?text=🇸🇦'">
+                    <span class="dev-text">تطوير وتشغيل مركز المعلومات الوطني</span>
+                </div>
+                
+                <!-- الجهة اليمين - نص الاستفسار -->
+                <div class="bottom-bar-right">
+                    <p class="contact-text">
+                        للاستفسار عن الخدمات الالكترونية "ابشر" اتصل على الرقم 
+                        <a href="tel:920020405" class="phone-link">920020405</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="js/main.js"></script>
 
 <style>
@@ -75,7 +166,7 @@
    ======================================== */
 
 .job-details-section {
-    padding: 100px 0 60px;
+    padding: 120px 0 60px;
     min-height: 100vh;
 }
 
@@ -92,7 +183,7 @@
 }
 
 .job-details-header {
-    background: linear-gradient(135deg, #165B33 0%, #0d3d21 100%);
+    background: linear-gradient(135deg, #376882 0%, #234d63 100%);
     color: white;
     padding: 30px;
     position: relative;
@@ -161,7 +252,7 @@
 .info-item .info-value {
     font-size: 16px;
     font-weight: 600;
-    color: #165B33;
+    color: #376882;
 }
 
 .job-section {
@@ -169,7 +260,7 @@
 }
 
 .job-section h3 {
-    color: #165B33;
+    color: #376882;
     font-size: 20px;
     margin-bottom: 15px;
     padding-right: 12px;
@@ -204,7 +295,7 @@
 .btn-apply-details {
     display: inline-block;
     background: #C9A03D;
-    color: #165B33;
+    color: #376882;
     padding: 14px 40px;
     border-radius: 50px;
     text-decoration: none;
@@ -259,7 +350,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #165B33;
+    background: #376882;
     color: white;
     padding: 12px 24px;
     border-radius: 50px;
@@ -270,13 +361,13 @@
 }
 
 .btn-save-details:hover {
-    background: #0d3d21;
+    background: #234d63;
     transform: translateY(-2px);
 }
 
 .btn-save-details.saved {
     background: #C9A03D;
-    color: #165B33;
+    color: #376882;
 }
 
 .btn-save-details.saved i {
@@ -288,13 +379,13 @@
     padding: 60px;
     background: white;
     border-radius: 20px;
-    color: #165B33;
+    color: #376882;
     font-size: 18px;
 }
 
 @media (max-width: 768px) {
     .job-details-section {
-        padding: 80px 0 100px;
+        padding: 100px 0 100px;
     }
     
     .job-details-header h1 {
@@ -336,8 +427,11 @@
     .info-grid {
         grid-template-columns: 1fr;
     }
+    
+    .job-details-section {
+        padding: 90px 0 100px;
+    }
 }
 </style>
-
 </body>
 </html>
