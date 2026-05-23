@@ -788,7 +788,6 @@ sidebar.innerHTML = `
     
     <div class="sidebar-logo-top">
         <img src="img/logo.jpg" alt="أبشر توظيف" class="sidebar-logo-img">
-        <h3 class="logo-title">ابشر توظيف</h3>
     </div>
     
     <div class="sidebar-nav">
