@@ -313,7 +313,7 @@ main, .main-content {
     color: white;
 }
 
-.sidebar-auth .btn-login-sidebar:hover {
+ .btn-login-sidebar:hover {
     background: rgba(201, 160, 61, 0.2);
 }
 
@@ -1683,24 +1683,11 @@ main, .main-content {
     padding: 30px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    margin: 10px 15px 20px 15px;
+    background: transparent; /* إزالة الخلفية الزرقاء */
 }
 
-.sidebar-logo-top img {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-}
 
-/* جعل الصورة بيضاء */
-.white-logo {
-    filter: brightness(0) invert(1);
-    background-color: transparent;
-}
-/* تنسيق الصورة العلوية */
+
 .sidebar-logo-img {
     width: 90px;
     height: 90px;
@@ -1708,7 +1695,18 @@ main, .main-content {
     object-fit: cover;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    /* إزالة أي filter قد يحول اللون */
+    filter: none;
+    background: white; /* خلفية بيضاء حول الصورة */
+    padding: 5px;
 }
+/* جعل الصورة بيضاء */
+/* إزالة أي تأثيرات من الكلاس white-logo إن وجد */
+.white-logo {
+    filter: none !important;
+    background-color: transparent !important;
+}
+
 .sidebar-logo-img:hover {
     transform: scale(1.05);
 }
