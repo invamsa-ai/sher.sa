@@ -776,36 +776,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // ====== 4. تفعيل زر الهمبرجر (القائمة الجانبية) ======
     
     // إنشاء القائمة الجانبية
-    const overlay = document.createElement('div');
-    overlay.className = 'sidebar-overlay';
+ // ====== 4. تفعيل زر الهمبرجر (القائمة الجانبية) ======
+
+// إنشاء القائمة الجانبية
+const overlay = document.createElement('div');
+overlay.className = 'sidebar-overlay';
+
+const sidebar = document.createElement('div');
+sidebar.className = 'sidebar';
+sidebar.innerHTML = `
+    <button class="close-sidebar" aria-label="إغلاق"><i class="fas fa-times"></i></button>
     
-    const sidebar = document.createElement('div');
-    sidebar.className = 'sidebar';
-    sidebar.innerHTML = `
-        <button class="close-sidebar" aria-label="إغلاق"><i class="fas fa-times"></i></button>
-        
-        <div class="sidebar-logo-top">
-            <img src="img/logo.jpg" alt="أبشر توظيف" class="white-logo" onerror="this.src='https://placehold.co/80x80/ffffff/376882?text=ابشر'">
-        </div>
-        
-        <div class="sidebar-nav">
-            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
-            <a href="jobs.html"><i class="fas fa-briefcase"></i> الوظائف</a>
-            <a href="favorites.html"><i class="fas fa-heart"></i> المفضلة</a>
-            <a href="terms.html"><i class="fas fa-building"></i> عن أبشر أعمال</a>
-        </div>
-        <div class="sidebar-logo-bottom">
-            <img src="img/logo15.png" alt="رؤية المملكة العربية السعودية 2030" onerror="this.src='https://placehold.co/80x80/165B33/white?text=رؤية+2030'">
-            <p>رؤية المملكة 2030</p>
-        </div>
-        <div class="sidebar-auth">
-            <a href="jobs.html" class="btn-register-sidebar"><i class="fas fa-briefcase"></i> تقديم على وظيفة</a>
-        </div>
-        
-        
-    `;
-    overlay.appendChild(sidebar);
-    document.body.appendChild(overlay);
+    <div class="sidebar-logo-top">
+        <img src="img/logo.jpg" alt="أبشر توظيف" class="sidebar-logo-img">
+        <h3 class="logo-title">ابشر توظيف</h3>
+    </div>
+    
+    <div class="sidebar-nav">
+        <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="jobs.html"><i class="fas fa-briefcase"></i> الوظائف</a>
+        <a href="favorites.html"><i class="fas fa-heart"></i> المفضلة</a>
+        <a href="terms.html"><i class="fas fa-building"></i> عن أبشر أعمال</a>
+    </div>
+    
+    <div class="sidebar-auth">
+        <a href="jobs.html" class="btn-register-sidebar"><i class="fas fa-briefcase"></i> تقديم على وظيفة</a>
+    </div>
+    
+    <div class="sidebar-logo-bottom">
+        <img src="img/logo15.png" alt="رؤية المملكة العربية السعودية 2030" class="sidebar-logo-bottom-img">
+        <p>رؤية المملكة 2030</p>
+    </div>
+`;
+overlay.appendChild(sidebar);
+document.body.appendChild(overlay);
     
     // ربط زر الهمبرجر
     const menuBtn = document.querySelector('.mobile-menu-btn');
