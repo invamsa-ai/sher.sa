@@ -1,6 +1,6 @@
 /* ========================================
    وظائف السعودية - الهوية السعودية
-   الألوان: أخضر #165B33 | ذهبي #C9A03D
+   الألوان: أزرق #376882 | ذهبي #C9A03D
    ======================================== */
 
 * {
@@ -42,7 +42,7 @@ main, .main-content {
 
 /* ========== الهيدر الزجاجي - مع خلفية غير شفافة ========== */
 .header {
-    background: rgba(22, 91, 51, 0.1);  /* شفافية 15% فقط */
+    background: rgba(55, 104, 130, 0.1);  /* شفافية 15% فقط */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     color: white;
@@ -59,7 +59,7 @@ main, .main-content {
 /* عند التمرير */
 /* عند التمرير يصبح أقل شفافية */
 .header.scrolled {
-    background: rgba(22, 91, 51, 0.30);
+    background: rgba(55, 104, 130, 0.30);
     backdrop-filter: blur(18px);
     padding: 10px 0;
 }
@@ -78,11 +78,9 @@ main, .main-content {
 }
 
 .logo img {
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
+    height: 80px;
+    width: 150px;
     object-fit: cover;
-    border: 2px solid rgba(201, 160, 61, 0.6);
     transition: all 0.3s;
     animation: glowPulse 2s infinite;
 }
@@ -179,7 +177,7 @@ main, .main-content {
 
 .btn-register {
     background: linear-gradient(135deg, #C9A03D 0%, #b88d2e 100%);
-    color: #165B33;
+    color: #376882;
     text-decoration: none;
     padding: 8px 22px;
     border-radius: 40px;
@@ -239,7 +237,7 @@ main, .main-content {
     right: -280px;
     width: 280px;
     height: 100%;
-    background: linear-gradient(180deg, #165B33 0%, #0d3d21 100%);
+    background: linear-gradient(180deg, #376882 0%, #234d63 100%);
     backdrop-filter: blur(20px);
     z-index: 2001;
     padding: 80px 20px 30px;
@@ -337,7 +335,7 @@ main, .main-content {
 
 .sidebar-auth .btn-register-sidebar {
     background: #C9A03D;
-    color: #165B33;
+    color: #376882;
 }
 
 .sidebar-auth .btn-register-sidebar:hover {
@@ -503,7 +501,7 @@ main, .main-content {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(10, 61, 31, 0.6) 0%, rgba(22, 91, 51, 0.5) 100%);
+    background: linear-gradient(135deg, rgba(55, 104, 130, 0.6) 0%, rgba(55, 104, 130, 0.5) 100%);
 }
 
 /* محتوى المنتصف */
@@ -591,11 +589,11 @@ main, .main-content {
     right: 0;
     height: 150px;
     background: linear-gradient(180deg, 
-        rgba(22, 91, 51, 0) 0%, 
-        rgba(22, 91, 51, 0.3) 25%,
-        rgba(22, 91, 51, 0.6) 50%,
-        rgba(22, 91, 51, 0.85) 75%,
-        #165B33 100%);
+        rgba(55, 104, 130, 0) 0%, 
+        rgba(55, 104, 130, 0.3) 25%,
+        rgba(55, 104, 130, 0.6) 50%,
+        rgba(55, 104, 130, 0.85) 75%,
+        #376882 100%);
     pointer-events: none;
     z-index: 2;
 }
@@ -620,7 +618,7 @@ main, .main-content {
     text-align: center;
     font-size: 32px;
     margin-bottom: 40px;
-    color: #165B33;
+    color: #376882;
     position: relative;
 }
 .section-titlee {
@@ -667,7 +665,7 @@ main, .main-content {
 }
 .category-card:hover {
     transform: translateY(-10px);
-    background: #165B33;
+    background: #376882;
     color: white;
 }
 
@@ -728,7 +726,7 @@ main, .main-content {
 }
 
 .job-badge {
-    background: #165B33;
+    background: #376882;
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -749,7 +747,7 @@ main, .main-content {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #165B33;
+    color: #376882;
 }
 
 .job-company {
@@ -781,7 +779,7 @@ main, .main-content {
 
 .btn-apply {
     display: inline-block;
-    background: #165B33;
+    background: #376882;
     color: white;
     padding: 10px 20px;
     border-radius: 30px;
@@ -792,15 +790,15 @@ main, .main-content {
 
 .btn-apply:hover {
     background: #C9A03D;
-    color: #165B33;
+    color: #376882;
 }
 
 .btn-view-all {
     display: inline-block;
     background: transparent;
-    color: #165B33;
+    color: #376882;
     padding: 12px 30px;
-    border: 2px solid #165B33;
+    border: 2px solid #376882;
     border-radius: 50px;
     text-decoration: none;
     margin-top: 40px;
@@ -808,7 +806,7 @@ main, .main-content {
 }
 
 .btn-view-all:hover {
-    background: #165B33;
+    background: #376882;
     color: white;
 }
 
@@ -842,13 +840,13 @@ main, .main-content {
 .feature h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #165B33;
+    color: #376882;
 }
 
 /* النصائح */
 .tips {
     padding: 60px 0;
-    background: linear-gradient(135deg, #165B33 0%, #0d3d21 100%);
+    background: linear-gradient(135deg, #376882 0%, #234d63 100%);
     color: white;
 }
 
@@ -926,7 +924,7 @@ main, .main-content {
 
 .social-links a:hover {
     background: #C9A03D;
-    color: #165B33;
+    color: #376882;
 }
 
 .footer-bottom {
@@ -955,7 +953,7 @@ main, .main-content {
 }
 
 .apply-header {
-    background: #165B33;
+    background: #376882;
     color: white;
     padding: 25px;
     text-align: center;
@@ -1056,7 +1054,7 @@ main, .main-content {
 }
 
 .training-info h3 {
-    color: #165B33;
+    color: #376882;
     margin-bottom: 5px;
 }
 
@@ -1082,7 +1080,7 @@ main, .main-content {
 
 .btn-submit {
     width: 100%;
-    background: #165B33;
+    background: #376882;
     color: white;
     padding: 15px;
     border: none;
@@ -1096,7 +1094,7 @@ main, .main-content {
 
 .btn-submit:hover {
     background: #C9A03D;
-    color: #165B33;
+    color: #376882;
 }
 
 .secure-note {
@@ -1193,4 +1191,578 @@ main, .main-content {
     .section-title {
         font-size: 24px;
     }
+}
+
+/* ========================================
+   الفوتر الرئيسي الجديد
+   ======================================== */
+
+.main-footer {
+    background: linear-gradient(135deg, #376882 0%, #234d63 100%);
+    color: white;
+    margin-top: 0;
+    padding-top: 40px;
+}
+
+/* المحتوى الرئيسي للفوتر (ثلاثة أعمدة) */
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 0 40px;
+    flex-wrap: wrap;
+}
+
+/* الجهة اليمنى - الصورة */
+.footer-right {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+/* المنتصف - النص القانوني */
+.footer-center {
+    flex: 2;
+    min-width: 280px;
+    text-align: center;
+}
+
+.copyright-text {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* الجهة اليسرى - قائمة التنقل */
+.footer-left {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #C9A03D;
+    transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.footer-nav a:hover {
+    color: #C9A03D;
+}
+
+/* ========================================
+   الشريط الأبيض السفلي
+   ======================================== */
+
+.footer-bottom-bar {
+    background: white;
+    padding: 12px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* الجهة اليسار - صورة صغيرة + نص */
+.bottom-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.small-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+.dev-text {
+    font-size: 13px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* الجهة اليمين - نص الاستفسار */
+.bottom-bar-right {
+    text-align: left;
+}
+
+.contact-text {
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+}
+
+.phone-link {
+    color: #376882;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.phone-link:hover {
+    color: #C9A03D;
+    text-decoration: underline;
+}
+
+/* ========================================
+   استجابة الفوتر للجوال
+   ======================================== */
+
+@media (max-width: 992px) {
+    .footer-main-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+    
+    .footer-right,
+    .footer-center,
+    .footer-left {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-bar-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bottom-bar-left {
+        justify-content: center;
+    }
+    
+    .bottom-bar-right {
+        text-align: center;
+    }
+    
+    .copyright-text {
+        font-size: 12px;
+    }
+    
+    .footer-nav {
+        gap: 15px;
+    }
+    
+    .footer-nav a {
+        font-size: 13px;
+    }
+    
+    .dev-text {
+        font-size: 11px;
+    }
+    
+    .contact-text {
+        font-size: 11px;
+    }
+    
+    .phone-link {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bottom-bar-left {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .small-logo {
+        height: 30px;
+    }
+}
+
+
+/* ========================================
+   بنر إعلاني متحرك (سلايدر)
+   ======================================== */
+
+.banner-slider {
+    padding: 40px 0;
+    background: #F5F5F5;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.slider-images {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* أزرار التنقل */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: rgba(55, 104, 130, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    right: 20px;
+}
+
+.next-btn {
+    left: 20px;
+}
+
+/* نقاط المؤشر */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 30px;
+    border-radius: 6px;
+    background: #C9A03D;
+}
+
+.dot:hover {
+    background: #C9A03D;
+}
+
+/* استجابة البنر للجوال */
+@media (max-width: 768px) {
+    .slider-images {
+        height: 250px;
+    }
+    
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .prev-btn {
+        right: 10px;
+    }
+    
+    .next-btn {
+        left: 10px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .dot.active {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-images {
+        height: 180px;
+    }
+    
+    .banner-slider {
+        padding: 20px 0;
+    }
+    
+    .slider-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+}
+/* ========================================
+   الهيدر المتجاوب
+   ======================================== */
+
+/* إخفاء لوجو الجوال في الشاشات الكبيرة */
+.logo-mobile {
+    display: none;
+}
+
+/* إظهار مجموعة الأثنين لوجو في الشاشات الكبيرة */
+.logo-desktop {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* الشاشات الكبيرة (ديسكتوب) */
+@media (min-width: 769px) {
+    .logo-group .logo img {
+        height: 60px;
+        width: auto;
+    }
+}
+
+/* شاشات الجوال (أقل من 768px) */
+@media (max-width: 768px) {
+    /* إخفاء مجموعة الأثنين لوجو */
+    .logo-desktop {
+        display: none;
+    }
+    
+    /* إظهار لوجو الجوال */
+    .logo-mobile {
+        display: flex;
+    }
+    
+    /* ترتيب عناصر الهيدر في الجوال */
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* لوجو الجوال في الجهة اليسرى */
+    .logo-mobile {
+        order: 1;
+        margin: 0;
+    }
+    
+    .logo-mobile img {
+        height: 45px;
+        width: auto;
+        max-width: 120px;
+    }
+    
+    /* زر الهمبرجر في الجهة اليمنى */
+    .mobile-menu-btn {
+        order: 2;
+        display: block;
+    }
+    
+    /* إخفاء القائمة العادية */
+    .nav {
+        display: none;
+    }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .logo-mobile img {
+        height: 38px;
+        max-width: 100px;
+    }
+}
+
+/* للشاشات المتوسطة (تابلت) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .logo-group .logo img {
+        height: 50px;
+    }
+}
+/* ========================================
+   صور القائمة الجانبية
+   ======================================== */
+
+/* الصورة العلوية (ابشر توظيف) - في الجهة اليسرى */
+.sidebar-logo-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* محاذاة إلى اليسار */
+    gap: 15px;
+    padding: 20px 20px 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.sidebar-logo-top img {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* جعل الصورة بيضاء */
+.white-logo {
+    filter: brightness(0) invert(1);
+    background-color: transparent;
+}
+/* تنسيق الصورة العلوية */
+.sidebar-logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    object-fit: cover;
+    /* إزالة filter brightness لأن الصورة الأساسية ملونة */
+}
+
+/* عنوان ابشر توظيف */
+.logo-title {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* الصورة السفلية (رؤية 2030) */
+.sidebar-logo-bottom {
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-logo-bottom-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    /* إزالة filter brightness لأن الصورة الأساسية ملونة */
+}
+
+.sidebar-logo-bottom p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* تعديل ارتفاع القائمة الجانبية */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* تحسين مظهر الروابط */
+.sidebar-nav {
+    flex: 1;
+}
+/* ========================================
+   كلاس active للقائمة الجانبية
+   ======================================== */
+
+/* تنسيق الرابط النشط في القائمة الجانبية */
+.sidebar-nav a.active {
+    background: rgba(201, 160, 61, 0.25);
+    border-right: 3px solid #C9A03D;
+    padding-right: 20px;
+}
+
+.sidebar-nav a.active i {
+    color: #C9A03D;
+}
+
+.sidebar-nav a.active:hover {
+    background: rgba(201, 160, 61, 0.35);
 }
