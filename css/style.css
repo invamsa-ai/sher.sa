@@ -1778,3 +1778,124 @@ main, .main-content {
 .sidebar-nav a.active:hover {
     background: rgba(201, 160, 61, 0.35);
 }
+
+
+
+
+
+
+
+
+/* ========================================
+   عنصر التوثيق - جدارات
+   ======================================== */
+
+.hero-certification {
+    position: relative;
+    z-index: 10;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.certification-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 60px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.certification-content:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certification-icon i {
+    font-size: 28px;
+    color: #C9A03D;
+}
+
+.certification-text {
+    text-align: right;
+}
+
+.cert-title {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+.cert-desc {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.cert-desc strong {
+    color: #C9A03D;
+}
+
+.certification-logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: white;
+    padding: 5px;
+}
+
+/* استجابة للجوال */
+@media (max-width: 768px) {
+    .hero-certification {
+        margin-top: 30px;
+    }
+    
+    .certification-content {
+        padding: 8px 18px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 30px;
+    }
+    
+    .certification-icon i {
+        font-size: 22px;
+    }
+    
+    .cert-desc {
+        font-size: 11px;
+    }
+    
+    .cert-title {
+        font-size: 10px;
+    }
+    
+    .certification-logo img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-certification {
+        margin-top: 20px;
+    }
+    
+    .certification-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 20px;
+    }
+    
+    .certification-text {
+        text-align: center;
+    }
+}
