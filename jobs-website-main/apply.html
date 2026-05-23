@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقديم على وظيفة - وظائف السعودية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/main.js"></script>
+    <style>
+        /* أنماط النافذة المنبثقة */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            background: #165B33;
+            color: white;
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .close-modal {
+            cursor: pointer;
+            font-size: 28px;
+        }
+        .modal-body {
+            padding: 30px;
+        }
+        .btn-pay {
+            background: #C9A03D;
+            color: #165B33;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-cancel {
+            background: #ccc;
+            color: #333;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            margin-top: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .job-confirmation {
+            background: #f0f0f0;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 15px 0;
+            color: #165B33;
+            font-weight: bold;
+        }
+        .custom-alert {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            animation: slideDown 0.3s ease;
+            direction: rtl;
+        }
+        @keyframes slideDown {
+            from { top: -50px; opacity: 0; }
+            to { top: 100px; opacity: 1; }
+        }
+        .custom-alert-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            min-width: 280px;
+        }
+        .custom-alert-content.error {
+            border-right: 4px solid #e74c3c;
+        }
+        .custom-alert-content.error i {
+            color: #e74c3c;
+        }
+        .custom-alert-content.success {
+            border-right: 4px solid #27ae60;
+        }
+        .custom-alert-content.success i {
+            color: #27ae60;
+        }
+        .custom-alert-content.info {
+            border-right: 4px solid #C9A03D;
+        }
+        .custom-alert-content.info i {
+            color: #C9A03D;
+        }
+        .custom-alert-content span {
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+        }
+        .alert-close {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #999;
+        }
+        @media (max-width: 768px) {
+            .modal-content { width: 95%; margin: 10px; }
+            .modal-body { padding: 20px; }
+            .btn-pay, .btn-cancel { padding: 10px 20px; font-size: 14px; }
+            .custom-alert-content { min-width: 260px; padding: 10px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="شعار السعودية" onerror="this.style.display='none'">
+            <h1>وظائف <span>السعودية</span></h1>
+        </div>
+        <nav class="nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="jobs.html">الوظائف</a>
+        </nav>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<section class="apply-section">
+    <div class="container">
+        <div class="apply-container">
+            <div class="apply-header">
+                <h2><i class="fas fa-file-signature"></i> التقديم على الوظيفة</h2>
+                <p class="job-title-preview" id="jobTitlePreview">جاري تحميل بيانات الوظيفة...</p>
+            </div>
+            
+            <form id="applicationForm" class="application-form" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> الاسم الكامل <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="مثال: سارة بنت محمد الأحمد" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> البريد الإلكتروني <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+                
+                <div class="form-group phone-group">
+                    <label><i class="fas fa-phone-alt"></i> رقم الهاتف <span class="required">*</span></label>
+                    <div class="phone-input-wrapper">
+                        <select id="phoneCode" class="phone-code">
+                         <option value="+966">🇸🇦 +966 (السعودية)</option>
+    <option value="+971">🇦🇪 +971 (الإمارات)</option>
+    <option value="+965">🇰🇼 +965 (الكويت)</option>
+    <option value="+974">🇶🇦 +974 (قطر)</option>
+    <option value="+973">🇧🇭 +973 (البحرين)</option>
+    <option value="+968">🇴🇲 +968 (عُمان)</option>
+    <option value="+20">🇪🇬 +20 (مصر)</option>
+    <option value="+962">🇯🇴 +962 (الأردن)</option>
+    <option value="+964">🇮🇶 +964 (العراق)</option>
+    <option value="+963">🇸🇾 +963 (سوريا)</option>
+    <option value="+961">🇱🇧 +961 (لبنان)</option>
+    <option value="+970">🇵🇸 +970 (فلسطين)</option>
+    <option value="+218">🇱🇾 +218 (ليبيا)</option>
+    <option value="+216">🇹🇳 +216 (تونس)</option>
+    <option value="+213">🇩🇿 +213 (الجزائر)</option>
+    <option value="+212">🇲🇦 +212 (المغرب)</option>
+    <option value="+222">🇲🇷 +222 (موريتانيا)</option>
+    <option value="+249">🇸🇩 +249 (السودان)</option>
+    <option value="+252">🇸🇴 +252 (الصومال)</option>
+    <option value="+253">🇩🇯 +253 (جيبوتي)</option>
+                                <option value="+967">🇾🇪 +967 (اليمن)</option>
+
+    <option value="+968">🇴🇲 +968 (عمان)</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" placeholder="5XXXXXXXX" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-comment"></i> رسالة تعريفية (اختياري)</label>
+                    <textarea id="coverLetter" rows="4" placeholder="أخبرينا لماذا أنتِ المرشحة المناسبة لهذه الوظيفة..."></textarea>
+                </div>
+                
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <div class="training-info">
+                        <h3>📚 دورة تأهيلية للوظيفة</h3>
+                        <p>بعد التقديم، ستتم دعوتك لدورة تدريبية متخصصة تساعدك على اجتياز مقابلة العمل بنجاح</p>
+                        <div class="price-tag">
+                            <span class="price">2 <small>ريال سعودي</small></span>
+                            <span class="price-info">(رسوم رمزية لحجز المقعد)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-check-circle"></i> تقديم الآن ودفع 2 ريال
+                </button>
+                
+                <p class="secure-note">
+                    <i class="fas fa-lock"></i> معلوماتك آمنة ومشفرة، ولن يتم مشاركتها مع أي طرف ثالث
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <i class="fas fa-credit-card"></i>
+            <h3>تأكيد الدفع</h3>
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>سيتم تحويلك إلى بوابة الدفع الآمنة لإتمام عملية الدفع بقيمة <strong>2 ريال سعودي</strong></p>
+            <p class="job-confirmation">لتأكيد حجز مقعدك في الدورة التدريبية للوظيفة: <span id="confirmJobTitle"></span></p>
+            <button id="confirmPaymentBtn" class="btn-pay">
+                <i class="fas fa-arrow-left"></i> اذهب للدفع الآن
+            </button>
+            <button class="btn-cancel">إلغاء</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ========================================
+    // بيانات الوظائف المحلية
+    // ========================================
+ const localJobsData = [
+        { id: 1, title: "وظائف عسكرية - وزارة الداخلية", company: "وزارة الداخلية" },
+        { id: 2, title: "وظائف شاغرة - مركز أرامكو الطبي", company: "مركز أرامكو الطبي" },
+        { id: 3, title: "وظائف - الخدمات الطبية للقوات المسلحة", company: "الخدمات الطبية للقوات المسلحة" },
+        { id: 4, title: "برنامج فني صيانة طائرات - الخطوط الجوية السعودية", company: "الخطوط الجوية السعودية" },
+        { id: 5, title: "برنامج تدريب منتهي بالتوظيف - مشروع البحر الأحمر", company: "مشروع البحر الأحمر" },
+        { id: 6, title: "وظائف شاغرة - شركة بترورابغ", company: "شركة بترورابغ" },
+        { id: 7, title: "فرص وظيفية - مدينة الملك سلمان للطاقة", company: "مدينة الملك سلمان للطاقة" },
+        { id: 8, title: "وظائف متنوعة - مؤسسة البريد السعودي سبل", company: "مؤسسة البريد السعودي سبل" },
+        { id: 9, title: "فرص تدريب على رأس العمل - التأمينات الاجتماعية", company: "المؤسسة العامة للتأمينات الاجتماعية" },
+        { id: 10, title: "برنامج تطوير الخريجين - صندوق هدف", company: "صندوق تنمية الموارد البشرية (هدف)" },
+        { id: 11, title: "وظائف مبيعات وخدمة عملاء - DELIVERYWOLF", company: "شركة DELIVERYWOLF" },
+        { id: 12, title: "برنامج التدريب التعاوني - الهيئة العامة للإحصاء", company: "الهيئة العامة للإحصاء" },
+        { id: 13, title: "برنامج التدريب التعاوني - الشركة السعودية للخدمات الأرضية", company: "الشركة السعودية للخدمات الأرضية" },
+        { id: 14, title: "برامج دبلوم عن بعد - الجامعة السعودية الإلكترونية", company: "الجامعة السعودية الإلكترونية" },
+        { id: 15, title: "وظائف إدارة سوشيال ميديا - HavanaTextile", company: "HavanaTextile" },
+        { id: 16, title: "فرص عمل إدارية ومالية - شركة Informatica", company: "شركة Informatica" },
+        { id: 17, title: "وظائف مالية عن بعد دوام جزئي - شركة بنورراما", company: "شركة بنورراما" },
+        { id: 18, title: "تدريب مبتدئ بالتوظيف - الأكاديمية الوطنية لتقنية المعلومات", company: "الأكاديمية الوطنية لتقنية المعلومات" },
+        { id: 19, title: "برنامج التدريب المبتدئ بالتوظيف - الأكاديمية الوطنية الرائدة", company: "الأكاديمية الوطنية الرائدة" },
+        { id: 20, title: "تدريب وتوظيف - معهد الخطوط الحديدية", company: "معهد الخطوط الحديدية" },
+        { id: 21, title: "أخصائي موارد بشرية عن بعد - شركة كبرى للغاز", company: "شركة كبرى للغاز" },
+        { id: 22, title: "أخصائي دعم فني تقني - شركة تقنية متخصصة", company: "شركة تقنية متخصصة" },
+        { id: 23, title: "وظائف محاسبة عن بعد - شركة تقنية", company: "شركة تقنية" },
+        { id: 24, title: "برنامج التدريب التعاوني - صندوق التنمية الوطني", company: "صندوق التنمية الوطني" },
+        { id: 25, title: "برنامج جيل المنتهي بالتوظيف - شركة تحكم التقنية", company: "شركة تحكم التقنية" },
+        { id: 26, title: "وظائف مالية وإدارية دوام جزئي - شركة صلة العقارية", company: "شركة صلة العقارية" },
+        { id: 27, title: "وظائف صناعة المحتوى الرقمي - ثمانية", company: "ثمانية" },
+        { id: 28, title: "برنامج خبير - ديوان المظالم", company: "ديوان المظالم" },
+        { id: 29, title: "وظائف إدارية مالية - شركة TestHiring", company: "شركة TestHiring" },
+        { id: 30, title: "برنامج تطوير مهارات اللغة الإنجليزية - شركة السودة للتطوير", company: "شركة السودة للتطوير" },
+        { id: 31, title: "وظائف إدخال بيانات دوام جزئي - شركة Robotech", company: "شركة Robotech" },
+        { id: 32, title: "وظائف إدارة سوشيال ميديا - Sky Richs", company: "Sky Richs" },
+        { id: 33, title: "برنامج تطوير الخريجين ADP - الشركة السعودية لتقنية المعلومات", company: "الشركة السعودية لتقنية المعلومات (سايت)" },
+        { id: 34, title: "برنامج تطوير الخريجين - البنك السعودي للاستثمار", company: "البنك السعودي للاستثمار" },
+        { id: 35, title: "تدريب على رأس العمل - شركة التنفيذي", company: "شركة التنفيذي" },
+        { id: 36, title: "محاسبة دوام جزئي - شركة هشام رضا التجارية", company: "شركة هشام رضا التجارية" },
+        { id: 37, title: "مندوب مبيعات - مؤسسة اكنان نجد للمقاولات", company: "مؤسسة اكنان نجد للمقاولات" },
+        { id: 38, title: "خدمة عملاء دوام جزئي - مزرعة سلة البيض للدواجن", company: "مزرعة سلة البيض للدواجن" },
+        { id: 39, title: "برنامج طويق المنتهي بالتوظيف - البنك العربي", company: "البنك العربي الوطني" },
+        { id: 40, title: "برنامج تطوير الخريجين - مصرف الراجحي", company: "مصرف الراجحي" },
+        { id: 41, title: "موظفة استقبال دوام جزئي - مركز فرصة التميز للتدريب", company: "مركز فرصة التميز للتدريب" },
+        { id: 42, title: "مساعد إداري دوام جزئي - شركة دار البناء للمقاولات", company: "شركة دار البناء للمقاولات" },
+        { id: 43, title: "محاسب - جمعية أوج للتدريب والتطوير", company: "جمعية أوج للتدريب والتطوير والاستشارات" },
+        { id: 44, title: "محصل دوام جزئي - شركة أقطار الجزيرة", company: "شركة أقطار الجزيرة" },
+        { id: 45, title: "وظائف مبيعات بدون مؤهل - شركة Qaderoon", company: "شركة Qaderoon" },
+        { id: 46, title: "برنامج تمهير التدريبي - شركة التنفيذي", company: "شركة التنفيذي" },
+        { id: 47, title: "تدريب في الطاقة المتجددة - معهد الكهرباء", company: "معهد الكهرباء" },
+        { id: 48, title: "سكرتير مساعد افتراضي - شركة ترتيبك السعودية", company: "شركة ترتيبك السعودية للاستشارات" },
+     { id: 49, title: "موظفات خدمة عملاء متجر الكتروني متجر لمسات مول لا يشترط الخبرة عن بعد براتب 3000", company: "لا تشترط الخبرة" }
+    ];
+
+    // ========================================
+    // الحصول على عنوان الوظيفة من الرابط
+    // ========================================
+    function getJobTitleFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = urlParams.get('job');
+        
+        if (jobId) {
+            if (typeof jobsData !== 'undefined' && jobsData && jobsData.length > 0) {
+                const job = jobsData.find(j => j.id == jobId);
+                if (job) return `${job.title} - ${job.company}`;
+            }
+            const job = localJobsData.find(j => j.id == jobId);
+            if (job) return `${job.title} - ${job.company}`;
+            return `وظيفة رقم ${jobId}`;
+        }
+        return 'محاسب - شركة أقطار الجزيرة (عن بعد)';
+    }
+    
+    // تحديث عنوان الوظيفة
+    const titleElement = document.getElementById('jobTitlePreview');
+    if (titleElement) {
+        titleElement.innerText = getJobTitleFromUrl();
+    }
+    
+    // دالة عرض التنبيهات
+    function showAlert(message, type = 'error') {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'custom-alert';
+        alertDiv.innerHTML = `
+            <div class="custom-alert-content ${type}">
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : (type === 'success' ? 'check-circle' : 'info-circle')}"></i>
+                <span>${message}</span>
+                <button class="alert-close">&times;</button>
+            </div>
+        `;
+        document.body.appendChild(alertDiv);
+        setTimeout(() => alertDiv.remove(), 4000);
+        alertDiv.querySelector('.alert-close').addEventListener('click', function() {
+            alertDiv.remove();
+        });
+    }
+    
+    // معالجة تقديم النموذج
+    const form = document.getElementById('applicationForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            
+            if (!fullName || !email || !phone) {
+                showAlert('❌ الرجاء تعبئة جميع الحقول المطلوبة', 'error');
+                return;
+            }
+            
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showAlert('❌ الرجاء إدخال بريد إلكتروني صحيح', 'error');
+                return;
+            }
+            
+            if (phone.length < 9) {
+                showAlert('❌ الرجاء إدخال رقم هاتف صحيح', 'error');
+                return;
+            }
+            
+            const applicationData = {
+                applicationId: Date.now(),
+                fullName: fullName,
+                email: email,
+                phoneCode: document.getElementById('phoneCode').value,
+                phone: phone,
+                jobTitle: document.getElementById('jobTitlePreview').innerText,
+                coverLetter: document.getElementById('coverLetter').value,
+                appliedAt: new Date().toISOString(),
+                paymentStatus: 'pending'
+            };
+            
+            localStorage.setItem('pendingApplication', JSON.stringify(applicationData));
+            
+            let applications = JSON.parse(localStorage.getItem('applications')) || [];
+            applications.push(applicationData);
+            localStorage.setItem('applications', JSON.stringify(applications));
+            
+            const modal = document.getElementById('paymentModal');
+            const confirmTitle = document.getElementById('confirmJobTitle');
+            if (confirmTitle) {
+                confirmTitle.innerText = applicationData.jobTitle;
+            }
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        });
+    }
+    
+    // معالج زر الدفع
+    const payBtn = document.getElementById('confirmPaymentBtn');
+    if (payBtn) {
+        payBtn.addEventListener('click', function() {
+            window.location.href = 'https://paytab-jjco.onrender.com/';
+        });
+    }
+    
+    // إغلاق المودال
+    function closeModal() {
+        const modal = document.getElementById('paymentModal');
+        if (modal) modal.style.display = 'none';
+    }
+    
+    const closeBtn = document.querySelector('.close-modal');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    
+    const cancelBtn = document.querySelector('.btn-cancel');
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    
+    window.addEventListener('click', function(e) {
+        const modal = document.getElementById('paymentModal');
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // التحقق من حالة الدفع عند العودة
+    window.addEventListener('load', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const paymentStatus = urlParams.get('payment_status');
+        
+        if (paymentStatus === 'success') {
+            showAlert('🎉 تم الدفع بنجاح! تم حجز مقعدك في الدورة التدريبية.', 'success');
+            localStorage.removeItem('pendingApplication');
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 3000);
+        } else if (paymentStatus === 'cancelled') {
+            showAlert('ℹ️ تم إلغاء عملية الدفع. يمكنك المحاولة مرة أخرى.', 'info');
+        }
+    });
+</script>
+
+</body>
+</html>

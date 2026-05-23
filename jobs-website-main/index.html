@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وظائف السعودية | وظائف نسائية عن بعد</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- الهيدر - الشريط العلوي -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="شعار السعودية" onerror="this.src='https://placehold.co/50x50/165B33/white?text=🇸🇦'">
+            <h1>وظائف <span>السعودية</span></h1>
+        </div>
+        
+        <nav class="nav">
+            <a href="index.html" class="active">الرئيسية</a>
+            <a href="jobs.html">الوظائف</a>
+                <a href="favorites.html">المفضلة</a>
+
+            <a href="#categories">الأقسام</a>
+            <!-- <a href="#features">المميزات</a>
+            <a href="#contact">اتصل بنا</a> -->
+        </nav>
+        
+        <div class="auth-buttons">
+            <a href="jobs.html" class="btn-register"> تقديم على وظيفه</a>
+        </div>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- القسم الرئيسي - Hero -->
+<section class="hero hero-with-image" style="background: linear-gradient(180deg, #0a3d1f 0%, #165B33 70%, #1a6b3c 100%);">
+    
+    <!-- صورة الخلفية -->
+    <div class="hero-background">
+        <img src="img/9454724.jpg" alt="خلفية وظائف السعودية">
+        <div class="hero-background-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-content-center">
+            <!-- النص في المنتصف -->
+            <div class="hero-text">
+                <div class="saudi-badge">
+                    <span>🇸🇦</span> وظائف معتمدة
+                </div>
+                <h1>وظائف <span class="highlight">نسائية</span><br>عن <span class="highlight">بُعد</span></h1>
+                <p>اكتشفي آلاف الفرص الوظيفية المتميزة للنساء في جميع المجالات، وظائف حكومية وشركات كبرى، مع إمكانية العمل من المنزل</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number">500+</span>
+                        <span class="label">وظيفة متاحة</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">150+</span>
+                        <span class="label">شركة موثقة</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">24/7</span>
+                        <span class="label">دعم مستمر</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- التدرج الأخضر الخفيف في الأسفل فقط -->
+    <div class="bottom-gradient-overlay"></div>
+</section>
+
+<!-- أقسام الوظائف -->
+<section class="categories" id="categories">
+    <div class="container">
+        <h2 class="section-title">أقسام الوظائف</h2>
+        <div class="categories-grid">
+            <!-- <div class="category-card">
+                <i class="fas fa-landmark"></i>
+                <h3>وظائف حكومية</h3>
+                <p>وزارة الداخلية، أرامكو، الدفاع المدني</p>
+            </div> -->
+            <div class="category-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>وظائف تقنية</h3>
+                <p>دعم فني، أمن سيبراني، برمجة</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>مبيعات وخدمة عملاء</h3>
+                <p>مندوبات مبيعات، دعم فني</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-calculator"></i>
+                <h3>إدارية ومالية</h3>
+                <p>محاسبة، موارد بشرية، سكرتارية</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-hashtag"></i>
+                <h3>تسويق ومحتوى</h3>
+                <p>سوشيال ميديا، كتابة محتوى، تصميم</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>تدريب منتهي بالتوظيف</h3>
+                <p>تمهير، برامج تطوير الخريجين</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- أحدث الوظائف -->
+<section class="latest-jobs">
+    <div class="container">
+        <h2 class="section-title"> أحدث الوظائف</h2>
+        <div class="jobs-grid" id="jobs-container">
+            <!-- سيتم تحميل الوظائف من JavaScript -->
+        </div>
+        <div class="text-center">
+            <a href="jobs.html" class="btn-view-all">عرض جميع الوظائف <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- مميزات الموقع -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">لماذا وظائف السعودية؟</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>وظائف موثقة</h3>
+                <p>جميع الوظائف مراجعة ومصدقة من فريقنا</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-bell"></i>
+                <h3>إشعارات فورية</h3>
+                <p>استقبلي إشعارات الوظائف الجديدة عبر واتساب والبريد</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-file-alt"></i>
+                <h3>تقديم سريع</h3>
+                <p>تقديم إلكتروني مع رفع السيرة الذاتية</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-heart"></i>
+                <h3>حفظ الوظائف</h3>
+                <p>احفظي الوظائف التي تهمك لمراجعتها لاحقاً</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chalkboard-user"></i>
+                <h3>دورات تأهيلية</h3>
+                <p>بسعر رمزي 2 ريال فقط لحجز مقعدك</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>متجاوب مع الجوال</h3>
+                <p>صمم ليعمل بشكل مثالي على جميع الأجهزة</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- نصائح سريعة -->
+<section class="tips">
+    <div class="container">
+        <h2 class="section-titlee"> نصائح سريعة لسيرتك الذاتية</h2>
+        <div class="tips-list">
+            <div class="tip"><i class="fas fa-id-card"></i> لا تكتبي رقم الهوية الوطنية</div>
+            <div class="tip"><i class="fas fa-calendar"></i> تجنبي تاريخ الميلاد</div>
+            <div class="tip"><i class="fas fa-star"></i> لا تذكري المعدل إذا كان أقل من 3 من 4</div>
+            <div class="tip"><i class="fas fa-image"></i> الصورة الشخصية - يفضل عدم وضعها</div>
+            <div class="tip"><i class="fas fa-envelope"></i> إيميل احترافي (ليس أمير الغرام)</div>
+            <div class="tip"><i class="fas fa-language"></i> لا تقيمي لغتك الإنجليزية إذا لم تكن ممتازة</div>
+        </div>
+    </div>
+</section>
+
+<!-- الفوتر -->
+<!-- <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>وظائف السعودية</h3>
+                <p>بوابتك لوظيفة أحلامك من منزلك</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <a href="jobs.html">الوظائف</a>
+                <a href="#">الأسئلة الشائعة</a>
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">الشروط والأحكام</a>
+            </div>
+            <div class="footer-col">
+                <h4>للمعلنين</h4>
+                <a href="employer-register.html">تسجيل كشركة</a>
+                <a href="#">إضافة وظيفة</a>
+                <a href="#">خطط الأسعار</a>
+            </div>
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <p><i class="fas fa-envelope"></i> info@saudijobs.com</p>
+                <p><i class="fab fa-whatsapp"></i> +966 5X XXX XXXX</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 وظائف السعودية - جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</footer> -->
+
+<!-- <script src="js/main.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الوظيفة - وظائف السعودية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="شعار السعودية" onerror="this.style.display='none'">
+            <h1>وظائف <span>السعودية</span></h1>
+            
+        </div>
+        <nav class="nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="jobs.html">الوظائف</a>
+                <a href="favorites.html">المفضلة</a>
+            <a href="#categories">الأقسام</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="jobs.html" class="btn-register">الوظائف</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- تفاصيل الوظيفة -->
+<section class="job-details-section">
+    <div class="container">
+        <div id="jobDetailsContainer" class="job-details-wrapper">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- سيتم تحميل تفاصيل الوظيفة عن طريق JavaScript -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i> جاري تحميل تفاصيل الوظيفة...
+            </div>
+        </div>
+    </div>
+</section>
+    <br>
+    <br>
+    <br>
+
+<!-- أزرار التنقل -->
+<div class="details-actions">
+    <div class="container">
+        <div class="actions-wrapper">
+            <a href="jobs.html" class="btn-back">
+                
+                <i class="fas fa-arrow-right"></i> العودة إلى الوظائف
+            </a>
+            <button id="saveJobBtn" class="btn-save-details">
+                <i class="far fa-heart"></i> حفظ في المفضلة
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+
+<style>
+/* ========================================
+   صفحة تفاصيل الوظيفة
+   ======================================== */
+
+.job-details-section {
+    padding: 100px 0 60px;
+    min-height: 100vh;
+}
+
+.job-details-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.job-details-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.job-details-header {
+    background: linear-gradient(135deg, #165B33 0%, #0d3d21 100%);
+    color: white;
+    padding: 30px;
+    position: relative;
+}
+
+.job-badge-details {
+    display: inline-block;
+    background: rgba(201, 160, 61, 0.2);
+    border: 1px solid rgba(201, 160, 61, 0.5);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.job-details-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.job-company-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.job-company-details i {
+    color: #C9A03D;
+}
+
+.job-details-body {
+    padding: 30px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #F5F5F5;
+    border-radius: 12px;
+}
+
+.info-item i {
+    font-size: 24px;
+    color: #C9A03D;
+}
+
+.info-item .info-label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+}
+
+.info-item .info-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #165B33;
+}
+
+.job-section {
+    margin-bottom: 30px;
+}
+
+.job-section h3 {
+    color: #165B33;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-right: 12px;
+    border-right: 4px solid #C9A03D;
+}
+
+.job-section p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.job-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.job-section ul li {
+    padding: 8px 0;
+    padding-right: 25px;
+    position: relative;
+}
+
+.job-section ul li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: #C9A03D;
+    font-weight: bold;
+}
+
+.btn-apply-details {
+    display: inline-block;
+    background: #C9A03D;
+    color: #165B33;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-apply-details:hover {
+    background: #b88d2e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(201, 160, 61, 0.3);
+}
+
+.details-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    z-index: 100;
+}
+
+.actions-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0f0f0;
+    color: #333;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #e0e0e0;
+}
+
+.btn-save-details {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #165B33;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.btn-save-details:hover {
+    background: #0d3d21;
+    transform: translateY(-2px);
+}
+
+.btn-save-details.saved {
+    background: #C9A03D;
+    color: #165B33;
+}
+
+.btn-save-details.saved i {
+    font-weight: 900;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 60px;
+    background: white;
+    border-radius: 20px;
+    color: #165B33;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .job-details-section {
+        padding: 80px 0 100px;
+    }
+    
+    .job-details-header h1 {
+        font-size: 22px;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .info-item {
+        padding: 8px;
+    }
+    
+    .info-item i {
+        font-size: 18px;
+    }
+    
+    .info-item .info-value {
+        font-size: 14px;
+    }
+    
+    .job-details-body {
+        padding: 20px;
+    }
+    
+    .actions-wrapper {
+        flex-direction: column;
+    }
+    
+    .btn-back, .btn-save-details {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</body>
+</html>
