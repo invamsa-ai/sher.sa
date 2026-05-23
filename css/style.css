@@ -317,14 +317,30 @@ main, .main-content {
     background: rgba(201, 160, 61, 0.2);
 }
 
-.sidebar-auth .btn-register-sidebar {
-    background: #C9A03D;
+.btn-register-sidebar {
+    background: linear-gradient(135deg, #C9A03D 0%, #b88d2e 100%);
     color: #376882;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-auth .btn-register-sidebar:hover {
-    background: #b88d2e;
+.btn-register-sidebar i {
+    font-size: 16px;
+}
+.btn-register-sidebar:hover {
+    background: linear-gradient(135deg, #d4a83d 0%, #c99a2e 100%);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 160, 61, 0.3);
 }
 
 /* ========================================
@@ -1663,16 +1679,18 @@ main, .main-content {
 .sidebar-logo-top {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* محاذاة إلى اليسار */
-    gap: 15px;
-    padding: 20px 20px 20px 25px;
+    justify-content: center;
+    padding: 30px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin: 10px 15px 20px 15px;
 }
 
 .sidebar-logo-top img {
-    width: 55px;
-    height: 55px;
+    width: 100%;
+    height: 100%;
     border-radius: 12px;
     object-fit: cover;
 }
@@ -1684,13 +1702,16 @@ main, .main-content {
 }
 /* تنسيق الصورة العلوية */
 .sidebar-logo-img {
-    width: 55px;
-    height: 55px;
-    border-radius: 12px;
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
     object-fit: cover;
-    /* إزالة filter brightness لأن الصورة الأساسية ملونة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
-
+.sidebar-logo-img:hover {
+    transform: scale(1.05);
+}
 /* عنوان ابشر توظيف */
 .logo-title {
     color: white;
@@ -1706,13 +1727,13 @@ main, .main-content {
     margin-top: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .sidebar-logo-bottom-img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     margin-bottom: 8px;
-    /* إزالة filter brightness لأن الصورة الأساسية ملونة */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .sidebar-logo-bottom p {
@@ -1720,7 +1741,15 @@ main, .main-content {
     font-size: 12px;
     margin: 0;
 }
-
+.sidebar-logo-bottom-img:hover {
+    opacity: 1;
+}
+.sidebar-auth {
+    margin: 20px 15px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 /* تعديل ارتفاع القائمة الجانبية */
 .sidebar {
     display: flex;
