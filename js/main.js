@@ -1034,7 +1034,100 @@ function toggleSavedJobInDetails(jobId, button) {
     
     localStorage.setItem('savedJobs', JSON.stringify(savedJobsLocal));
 }
+// ========================================
+// بنر السلايدر المتغير تلقائياً
+// ========================================
 
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+    let slideInterval;
+    const intervalTime = 4000; // 5 ثواني
+
+    // دالة لعرض الشريحة المحددة
+    function showSlide(index) {
+        // التأكد من أن index ضمن النطاق الصحيح
+        if (index < 0) {
+            index = slides.length - 1;
+        } else if (index >= slides.length) {
+            index = 0;
+        }
+        
+        // إزالة الكلاس active من جميع الشرائح والنقاط
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        // إضافة الكلاس active للشريحة والنقطة الحالية
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+
+    // دالة للانتقال إلى الشريحة التالية
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    // دالة للانتقال إلى الشريحة السابقة
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    // بدء التشغيل التلقائي
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    // إيقاف التشغيل التلقائي
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+
+    // إضافة مستمعي الأحداث للأزرار
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+
+    // إضافة مستمعي الأحداث للنقاط
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+
+    // إيقاف التشغيل التلقائي عند تمرير الماوس على السلايدر
+    const sliderContainer = document.querySelector('.slider-container');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    // بدء التشغيل التلقائي عند تحميل الصفحة
+    startAutoSlide();
+});
 // جعل الدوال عامة للاستخدام في HTML
 // جعل الدوال عامة للاستخدام في HTML
 window.resetFilters = resetFilters;
