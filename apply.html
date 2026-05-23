@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="js/main.js"></script>
-    <style>
+   <style>
         /* أنماط النافذة المنبثقة */
         .modal {
             display: none;
@@ -35,7 +35,7 @@
             to { transform: translateY(0); opacity: 1; }
         }
         .modal-header {
-            background: #165B33;
+            background: #376882;
             color: white;
             padding: 20px;
             border-radius: 20px 20px 0 0;
@@ -52,7 +52,7 @@
         }
         .btn-pay {
             background: #C9A03D;
-            color: #165B33;
+            color: #376882;
             padding: 12px 25px;
             border: none;
             border-radius: 30px;
@@ -76,7 +76,7 @@
             padding: 12px;
             border-radius: 10px;
             margin: 15px 0;
-            color: #165B33;
+            color: #376882;
             font-weight: bold;
         }
         .custom-alert {
@@ -138,25 +138,74 @@
             .btn-pay, .btn-cancel { padding: 10px 20px; font-size: 14px; }
             .custom-alert-content { min-width: 260px; padding: 10px 18px; }
         }
-    </style>
+</style>
 </head>
 <body>
 
 <header class="header">
     <div class="container">
-        <div class="logo">
-            <img src="img/logo.jpg" alt="شعار السعودية" onerror="this.style.display='none'">
-            <h1>وظائف <span>السعودية</span></h1>
+        <!-- لوجو الجوال (يظهر في الهاتف فقط) -->
+        <div class="logo logo-mobile">
+            <img src="img/logo.jpg" alt="شعار ابشر توظيف" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
         </div>
+        
+        <!-- الأثنين اللوجو (يظهران في الديسكتوب فقط) -->
+        <div class="logo-group logo-desktop">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="شعار ابشر توظيف" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+            </div>
+          
+        </div>
+        
         <nav class="nav">
-            <a href="index.html">الرئيسية</a>
-            <a href="jobs.html">الوظائف</a>
+            <a href="index.html" >الرئيسية</a>
+            <a href="jobs.html" class="active">الوظائف</a>
+            <a href="favorites.html">المفضلة</a>
+                        <a href="terms.html" >عن أبشر أعمال</a>
         </nav>
+         <div class="logo-group logo-desktop">
+           
+            <div class="logo">
+                <img src="img/logo15.png" alt="شعار روية 2300" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+            </div>
+        </div>
+        
         <button class="mobile-menu-btn">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 </header>
+
+<!-- القائمة الجانبية (سايد بار) للجوال - توضع خارج الهيدر -->
+<div class="sidebar-overlay">
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        
+        <!-- صورة ابشر توظيف في الجهة اليسرى - بلون أبيض -->
+        <div class="sidebar-logo-top">
+            <img src="img/logo.jpg" alt="ابشر توظيف" class="white-logo" onerror="this.src='https://placehold.co/80x80/ffffff/376882?text=ابشر'">
+            <h3 class="logo-title">ابشر توظيف</h3>
+        </div>
+        
+        <div class="sidebar-nav">
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="jobs.html"><i class="fas fa-briefcase"  class="active"></i> الوظائف</a>
+            <a href="favorites.html"><i class="fas fa-heart"></i> المفضلة</a>
+                                   <a href="terms.html" >عن أبشر أعمال</a>
+
+        </div>
+        
+        <div class="sidebar-auth">
+            <a href="jobs.html" class="btn-register-sidebar"><i class="fas fa-briefcase"></i> تقديم على وظيفة</a>
+        </div>
+        
+        <!-- صورة رؤية 2030 في الأسفل -->
+        <div class="sidebar-logo-bottom">
+            <img src="img/logo15.png" alt="رؤية المملكة 2030" onerror="this.src='https://placehold.co/80x80/165B33/white?text=رؤية+2030'">
+            <p>رؤية المملكة 2030</p>
+        </div>
+    </div>
+</div>
 
 <section class="apply-section">
     <div class="container">
@@ -257,6 +306,55 @@
         </div>
     </div>
 </div>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-main-content">
+            <!-- الجهة اليمنى - صورة مثل اللوجو -->
+            <div class="footer-right">
+                <img src="img/logo.jpg" alt="شعار أبشر" class="footer-logo" onerror="this.src='https://placehold.co/150x80/376882/white?text=🇸🇦'">
+            </div>
+            
+            <!-- المنتصف - حقوق الملكية والنص القانوني -->
+            <div class="footer-center">
+                <p class="copyright-text">
+                    جميع الحقوق محفوظة لأبشر، المملكة العربية السعودية © 1447هـ - 2026م.<br>
+                    والوصلات الخارجية الموجودة في البوابة هي لأغراض مرجعية، أبشر ليس مسؤولا عن محتويات المواقع الخارجية.
+                </p>
+            </div>
+            
+            <!-- الجهة اليسرى - قائمة التنقل -->
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="jobs.html" class="active">الوظائف</a>
+                    <a href="favorites.html">المفضلة</a>
+                        <a href="terms.html" >عن أبشر أعمال</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الشريط الأبيض السفلي -->
+    <div class="footer-bottom-bar">
+        <div class="container">
+            <div class="bottom-bar-content">
+                <!-- الجهة اليسار - صورة صغيرة + نص -->
+                <div class="bottom-bar-left">
+                    <img src="img/sdaia-logo.png" alt="مركز المعلومات الوطني" class="small-logo" onerror="this.src='https://placehold.co/30x30/376882/white?text=🇸🇦'">
+                    <span class="dev-text">تطوير وتشغيل مركز المعلومات الوطني</span>
+                </div>
+                
+                <!-- الجهة اليمين - نص الاستفسار -->
+                <div class="bottom-bar-right">
+                    <p class="contact-text">
+                        للاستفسار عن الخدمات الالكترونية "ابشر" اتصل على الرقم 
+                        <a href="tel:920020405" class="phone-link">920020405</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script>
     // ========================================
