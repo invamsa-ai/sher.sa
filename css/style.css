@@ -304,24 +304,8 @@ main, .main-content {
 }
 
 /* أزرار القائمة الجانبية */
-.sidebar-auth {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: auto;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
 
-.sidebar-auth .btn-login-sidebar,
-.sidebar-auth .btn-register-sidebar {
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 40px;
-    text-align: center;
-    font-weight: bold;
-    transition: all 0.3s;
-}
+
 
 .sidebar-auth .btn-login-sidebar {
     background: transparent;
