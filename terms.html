@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن أبشر أعمال - منصة أبشر أعمال الإلكترونية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+
+    <style>
+        /* ========================================
+           الصفحة كاملة الشاشة - عن أبشر أعمال
+           ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #F5F5F5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* الصفحة تأخذ كامل الشاشة */
+        /* .full-page {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        } */
+        
+        /* الحاوية الرئيسية */
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+        
+        /* بطاقة المحتوى */
+        .terms-card {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* الهيدر الخاص بالبطاقة */
+        .terms-header {
+            background: linear-gradient(135deg, #376882 0%, #234d63 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        
+        .terms-header i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: #C9A03D;
+        }
+        
+        .terms-header h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        
+        .terms-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* جسم البطاقة */
+        .terms-body {
+        }
+        
+        /* صندوق المعلومات */
+        .info-box {
+            background: linear-gradient(135deg, rgba(55, 104, 130, 0.08), rgba(35, 77, 99, 0.04));
+            border-right: 4px solid #C9A03D;
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .info-box i {
+            font-size: 32px;
+            color: #C9A03D;
+        }
+        
+        .info-box p {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin: 0;
+        }
+        
+        /* الصناديق العامة */
+        .history-box, .services-box {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #F8F8F8;
+            border-radius: 20px;
+        }
+        
+        .history-box h3, .services-box h3, .terms-box h3 {
+            color: #376882;
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .history-box h3 i, .services-box h3 i, .terms-box h3 i {
+            color: #C9A03D;
+        }
+        
+        .history-box p, .services-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        /* شروط الاستخدام */
+        .terms-box {
+            margin-bottom: 30px;
+            background: #F8F8F8;
+            border-radius: 20px;
+            padding: 25px;
+        }
+        
+        .term-item {
+            display: flex;
+            gap: 20px;
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .term-item:last-child {
+            border-bottom: none;
+        }
+        
+        .term-number {
+            width: 45px;
+            height: 45px;
+            background: #C9A03D;
+            color: #376882;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .term-text {
+            flex: 1;
+        }
+        
+        .term-text h4 {
+            color: #376882;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .term-text p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* صندوق التواصل */
+        .contact-box {
+            text-align: center;
+            background: linear-gradient(135deg, #376882 0%, #234d63 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-box i {
+            font-size: 56px;
+            color: #C9A03D;
+            margin-bottom: 15px;
+        }
+        
+        .contact-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-box p {
+            margin: 10px 0;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .contact-box strong {
+            color: #C9A03D;
+        }
+        
+        /* زر العودة */
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #376882;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-back-home:hover {
+            background: #C9A03D;
+            color: #376882;
+            transform: translateY(-2px);
+        }
+        
+        /* استجابة للجوال */
+        @media (max-width: 768px) {
+            .full-page {
+                padding: 20px;
+            }
+            
+            .terms-header {
+                padding: 30px 20px;
+            }
+            
+            .terms-header h1 {
+                font-size: 26px;
+            }
+            
+            .terms-header i {
+                font-size: 48px;
+            }
+            
+            .terms-body {
+                padding: 25px;
+            }
+            
+            .info-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .info-box i {
+                margin: 0 auto;
+            }
+            
+            .history-box h3, .services-box h3, .terms-box h3 {
+                font-size: 20px;
+            }
+            
+            .term-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            .term-number {
+                margin: 0 auto;
+            }
+            
+            .term-text h4 {
+                font-size: 18px;
+            }
+            
+            .contact-box {
+                padding: 25px;
+            }
+            
+            .contact-box h3 {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .terms-header h1 {
+                font-size: 22px;
+            }
+            
+            .terms-body {
+                padding: 20px;
+            }
+            
+            .info-box p {
+                font-size: 16px;
+            }
+            
+            .history-box p, .services-box p {
+                font-size: 14px;
+            }
+            
+            .term-text h4 {
+                font-size: 16px;
+            }
+            
+            .term-text p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <!-- لوجو الجوال (يظهر في الهاتف فقط) -->
+        <div class="logo logo-mobile">
+            <img src="img/logo.jpg" alt="شعار ابشر توظيف" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+        </div>
+        
+        <!-- الأثنين اللوجو (يظهران في الديسكتوب فقط) -->
+        <div class="logo-group logo-desktop">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="شعار ابشر توظيف" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+            </div>
+          
+        </div>
+        
+        <nav class="nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="jobs.html">الوظائف</a>
+            <a href="favorites.html">المفضلة</a>
+            <a href="#categories">الأقسام</a>
+                        <a href="terms.html"  class="active" >عن أبشر أعمال</a>
+
+        </nav>
+         <div class="logo-group logo-desktop">
+           
+            <div class="logo">
+                <img src="img/logo15.png" alt="شعار روية 2300" onerror="this.src='https://placehold.co/50x50/376882/white?text=🇸🇦'">
+            </div>
+        </div>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- القائمة الجانبية (سايد بار) للجوال - توضع خارج الهيدر -->
+<div class="sidebar-overlay">
+    <div class="sidebar">
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+        
+        <!-- صورة ابشر توظيف في الجهة اليسرى - بلون أبيض -->
+        <div class="sidebar-logo-top">
+            <img src="img/logo.jpg" alt="ابشر توظيف" class="white-logo" onerror="this.src='https://placehold.co/80x80/ffffff/376882?text=ابشر'">
+            <h3 class="logo-title">ابشر توظيف</h3>
+        </div>
+        
+        <div class="sidebar-nav">
+            <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="jobs.html"><i class="fas fa-briefcase"></i> الوظائف</a>
+            <a href="favorites.html"><i class="fas fa-heart"></i> المفضلة</a>
+            <a href="#categories"><i class="fas fa-tags"></i> الأقسام</a>
+            <a href="#features"><i class="fas fa-star"></i> المميزات</a>
+        </div>
+        
+        <div class="sidebar-auth">
+            <a href="jobs.html" class="btn-register-sidebar"><i class="fas fa-briefcase"></i> تقديم على وظيفة</a>
+        </div>
+        
+        <!-- صورة رؤية 2030 في الأسفل -->
+        <div class="sidebar-logo-bottom">
+            <img src="img/logo15.png" alt="رؤية المملكة 2030" onerror="this.src='https://placehold.co/80x80/165B33/white?text=رؤية+2030'">
+            <p>رؤية المملكة 2030</p>
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="full-page">
+    <div class="container">
+        
+        <div class="terms-card">
+            <div class="terms-header">
+                <i ></i>
+                <h1>عن أبشر أعمال</h1>
+                <p>منصة أبشر أعمال الإلكترونية</p>
+            </div>
+            
+            <div class="terms-body">
+                <div class="info-box">
+                    <i></i>
+                    <p>منصـة أبشـر أعمـال الإلكترونيـة تخـدم أصحـاب المؤسسـات فـي المملكـة، وتمكنهـم مـن تنفيـذ تعاملاتهم الإلكترونيـة الخاصـة بالعمالـة بشـكل سـريع وآمـن.</p>
+                </div>
+
+                <div class="history-box">
+                    <h3><i></i> تاريخ الإطلاق</h3>
+                    <p>تم إطلاق منصة أبشر أعمال في عام <strong>2017م</strong>، مشتملة على أهم الخدمات التي يحتاجها عملاء المنصة.</p>
+                </div>
+
+                <div class="services-box">
+                    <h3><i></i> الخدمات والاستعلامات</h3>
+                    <p>وفـي هـذا الدليـل تـم اسـتعراض الخدمـات والاسـتعلامات الإلكترونيـة علـى منصـة أبشـر أعمـال، ونأمـل أن يكـون هـذا الدليـل مرجعـا ً مفيـدا للمسـتخدمين لتعريفهـم بالخدمـات الحاليـة مـع حرصنـا علـى تحديثـه بشـكل دوري ليغطـي الخدمـات الجديـدة.</p>
+                </div>
+
+                <!-- شروط الاستخدام -->
+                <div class="terms-box">
+                    <h3><i ></i> شروط الاستخدام</h3>
+                    
+                    <div class="term-item">
+                        <div class="term-number">1</div>
+                        <div class="term-text">
+                            <h4>الالتزام بالقوانين</h4>
+                            <p>يجب على جميع المستخدمين الالتزام بالأنظمة واللوائح المعمول بها في المملكة العربية السعودية.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="term-item">
+                        <div class="term-number">2</div>
+                        <div class="term-text">
+                            <h4>دقة المعلومات</h4>
+                            <p>يتحمل المستخدم المسؤولية الكاملة عن صحة ودقة المعلومات المدخلة في المنصة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="term-item">
+                        <div class="term-number">3</div>
+                        <div class="term-text">
+                            <h4>سرية البيانات</h4>
+                            <p>تلتزم المنصة بحماية وسرية بيانات المستخدمين وفقًا لسياسة الخصوصية المعتمدة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="term-item">
+                        <div class="term-number">4</div>
+                        <div class="term-text">
+                            <h4>الاستخدام المسموح</h4>
+                            <p>يسمح باستخدام المنصة للأغراض المشروعة فقط، ويمنع استخدامها لأي غرض غير قانوني.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="term-item">
+                        <div class="term-number">5</div>
+                        <div class="term-text">
+                            <h4>تحديث الشروط</h4>
+                            <p>تحتفظ المنصة بالحق في تحديث هذه الشروط في أي وقت، مع إخطار المستخدمين بالتغييرات.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fas fa-headset"></i>
+                    <h3>للتواصل والدعم</h3>
+                    <p>للاستفسار عن الخدمات الالكترونية "ابشر" اتصل على الرقم <strong>920020405</strong></p>
+                    <p>أو عبر البريد الإلكتروني: <strong>info@absher.sa</strong></p>
+                </div>
+                
+                <!-- <div class="back-button">
+                    <a href="index.html" class="btn-back-home">
+                        <i class="fas fa-arrow-right"></i> العودة إلى الرئيسية
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-main-content">
+            <!-- الجهة اليمنى - صورة مثل اللوجو -->
+            <div class="footer-right">
+                <img src="img/logo.jpg" alt="شعار أبشر" class="footer-logo" onerror="this.src='https://placehold.co/150x80/376882/white?text=🇸🇦'">
+            </div>
+            
+            <!-- المنتصف - حقوق الملكية والنص القانوني -->
+            <div class="footer-center">
+                <p class="copyright-text">
+                    جميع الحقوق محفوظة لأبشر، المملكة العربية السعودية © 1447هـ - 2026م.<br>
+                    والوصلات الخارجية الموجودة في البوابة هي لأغراض مرجعية، أبشر ليس مسؤولا عن محتويات المواقع الخارجية.
+                </p>
+            </div>
+            
+            <!-- الجهة اليسرى - قائمة التنقل -->
+            <div class="footer-left">
+                <nav class="footer-nav">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="jobs.html">الوظائف</a>
+                    <a href="favorites.html">المفضلة</a>
+                    <a href="#categories">الأقسام</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الشريط الأبيض السفلي -->
+    <div class="footer-bottom-bar">
+        <div class="container">
+            <div class="bottom-bar-content">
+                <!-- الجهة اليسار - صورة صغيرة + نص -->
+                <div class="bottom-bar-left">
+                    <img src="img/sdaia-logo.png" alt="مركز المعلومات الوطني" class="small-logo" onerror="this.src='https://placehold.co/30x30/376882/white?text=🇸🇦'">
+                    <span class="dev-text">تطوير وتشغيل مركز المعلومات الوطني</span>
+                </div>
+                
+                <!-- الجهة اليمين - نص الاستفسار -->
+                <div class="bottom-bar-right">
+                    <p class="contact-text">
+                        للاستفسار عن الخدمات الالكترونية "ابشر" اتصل على الرقم 
+                        <a href="tel:920020405" class="phone-link">920020405</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
