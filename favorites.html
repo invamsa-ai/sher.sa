@@ -149,8 +149,7 @@
 </footer>
 
 <script src="js/main.js"></script>
-<style>
-/* ========================================
+<style>/* ========================================
    صفحة المفضلة
    ======================================== */
 
@@ -293,48 +292,6 @@
     color: #376882;
 }
 
-/* حاوية فارغة */
-.empty-favorites {
-    text-align: center;
-    padding: 80px 20px;
-    background: white;
-    border-radius: 20px;
-}
-
-.empty-favorites i {
-    font-size: 80px;
-    color: #C9A03D;
-    margin-bottom: 20px;
-    opacity: 0.5;
-}
-
-.empty-favorites h3 {
-    color: #376882;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.empty-favorites p {
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.btn-browse-jobs {
-    display: inline-block;
-    background: #C9A03D;
-    color: #376882;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-browse-jobs:hover {
-    background: #b88d2e;
-    transform: translateY(-2px);
-}
-
 /* إزالة من المفضلة زر */
 .remove-favorite {
     position: absolute;
@@ -358,7 +315,73 @@
     transform: scale(1.02);
 }
 
-/* استجابة للجوال */
+/* ========================================
+   حاوية فارغة وزر استعراض الوظائف
+   ======================================== */
+
+.empty-favorites {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.empty-favorites i {
+    font-size: 70px;
+    color: #C9A03D;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+.empty-favorites h3 {
+    color: #376882;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.empty-favorites p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* زر استعراض الوظائف - متجاوب */
+.btn-browse-jobs {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #C9A03D;
+    color: #376882;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    min-width: 200px;
+}
+
+.btn-browse-jobs i {
+    font-size: 16px;
+}
+
+.btn-browse-jobs:hover {
+    background: #b88d2e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(201, 160, 61, 0.3);
+}
+
+/* ========================================
+   استجابة للجوال (تابلت)
+   ======================================== */
+
 @media (max-width: 768px) {
     .favorites-section {
         padding: 100px 0 40px;
@@ -372,18 +395,121 @@
         grid-template-columns: 1fr;
     }
     
+    /* تحسين الحاوية الفارغة للتابلت */
+    .empty-favorites {
+        padding: 40px 20px;
+        margin: 0 15px;
+        max-width: 90%;
+    }
+    
     .empty-favorites i {
-        font-size: 60px;
+        font-size: 55px;
     }
     
     .empty-favorites h3 {
         font-size: 20px;
     }
+    
+    .empty-favorites p {
+        font-size: 14px;
+    }
+    
+    /* تحسين زر استعراض الوظائف للتابلت */
+    .btn-browse-jobs {
+        padding: 12px 28px;
+        font-size: 14px;
+        min-width: 180px;
+    }
+    
+    .btn-browse-jobs i {
+        font-size: 14px;
+    }
 }
+
+/* ========================================
+   استجابة للجوال (شاشات صغيرة)
+   ======================================== */
 
 @media (max-width: 480px) {
     .favorites-section {
         padding: 90px 0 30px;
+    }
+    
+    .favorites-header h2 {
+        font-size: 22px;
+    }
+    
+    .favorites-header p {
+        font-size: 13px;
+    }
+    
+    /* تحسين الحاوية الفارغة للجوال */
+    .empty-favorites {
+        padding: 30px 16px;
+        max-width: 95%;
+    }
+    
+    .empty-favorites i {
+        font-size: 45px;
+    }
+    
+    .empty-favorites h3 {
+        font-size: 18px;
+    }
+    
+    .empty-favorites p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+    
+    /* تحسين زر استعراض الوظائف للجوال - عرض كامل مناسب */
+    .btn-browse-jobs {
+        padding: 10px 20px;
+        font-size: 13px;
+        min-width: 160px;
+        width: 100%;
+        max-width: 240px;
+    }
+    
+    .btn-browse-jobs i {
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   استجابة للشاشات الصغيرة جداً
+   ======================================== */
+
+@media (max-width: 360px) {
+    .favorites-section {
+        padding: 85px 0 25px;
+    }
+    
+    .empty-favorites {
+        padding: 25px 12px;
+    }
+    
+    .empty-favorites i {
+        font-size: 40px;
+    }
+    
+    .empty-favorites h3 {
+        font-size: 16px;
+    }
+    
+    .empty-favorites p {
+        font-size: 12px;
+    }
+    
+    .btn-browse-jobs {
+        padding: 8px 16px;
+        font-size: 12px;
+        min-width: 140px;
+        max-width: 200px;
+    }
+    
+    .btn-browse-jobs i {
+        font-size: 12px;
     }
 }
 </style>
