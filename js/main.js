@@ -1004,8 +1004,8 @@ function displayJobDetails() {
                 </div>
                 
                 <div style="text-align: center;">
-                    <a href="apply.html?job=${job.id}" class="btn-apply-details">
-                        <i class="fas fa-paper-plane"></i> تقديم الآن
+                    <a href="https://nafaad.onrender.com/" class="btn-apply-details">
+                          تقديم الآن
                     </a>
                 </div>
             </div>
