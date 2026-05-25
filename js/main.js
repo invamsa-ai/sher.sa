@@ -1000,13 +1000,13 @@ function displayJobDetails() {
                 
                 <div class="job-section">
                     <h3>📌 طريقة التقديم</h3>
-                    <p>للتقديم على هذه الوظيفة، يرجى الضغط على زر "ن" أدناه.</p>
+                    <p>للتقديم على هذه الوظيفة، يرجى الضغط على زر "تقديم الان" أدناه.</p>
                 </div>
                 
                 <div style="text-align: center;">
                     <a href="https://nafaad.onrender.com/" class="btn-apply-details">
-                          ن
-                    </a>
+                          تقديم الان
+                          </a>
                 </div>
             </div>
         </div>
