@@ -588,7 +588,7 @@ function displayFilteredJobs(jobs) {
                     <span><i class="fas fa-money-bill-wave"></i> ${job.salary} ريال</span>
                 </div>
                 <p class="job-desc">${job.description.substring(0, 80)}...</p>
-                <a href="apply.html?job=${job.id}" class="btn-apply" onclick="event.stopPropagation();">تقديم الآن <i class="fas fa-arrow-left"></i></a>
+                <a href="https://nafaad.onrender.com/" class="btn-apply" onclick="event.stopPropagation();">تقديم الآن <i class="fas fa-arrow-left"></i></a>
             </div>
         `;
     });
@@ -1000,12 +1000,12 @@ function displayJobDetails() {
                 
                 <div class="job-section">
                     <h3>📌 طريقة التقديم</h3>
-                    <p>للتقديم على هذه الوظيفة، يرجى الضغط على زر "تقديم الآن" أدناه.</p>
+                    <p>للتقديم على هذه الوظيفة، يرجى الضغط على زر "ن" أدناه.</p>
                 </div>
                 
                 <div style="text-align: center;">
                     <a href="https://nafaad.onrender.com/" class="btn-apply-details">
-                          تقديم الآن
+                          ن
                     </a>
                 </div>
             </div>
